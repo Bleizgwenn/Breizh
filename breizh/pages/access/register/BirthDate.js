@@ -9,23 +9,24 @@ import {
 } from "react-native"
 import { withNavigation } from "react-navigation"
 import {Dimensions} from 'react-native'
-import LeftArrow from "../../components/svg/LeftArrow"
+import LeftArrow from "../../../components/svg/LeftArrow"
+import RNDateTimePicker from '@react-native-community/datetimepicker'
   
 //  Dimensions de l'écran
 const screenWidth = Dimensions.get('window').width
 const screenHeight = Dimensions.get('window').height
 
-class Login extends React.Component {
-    
+class BirthDate extends React.Component {
+
     render(){
 
-        // const [text, onChangeText] = React.useState('Useless Text')
-        // const [number, onChangeNumber] = React.useState('')
+        // const [text, onChangeText] = React.useState('Useless Text');
+        // const [number, onChangeNumber] = React.useState('');
 
         return (
 
             <View style={styles.container}>
-              
+                
                 <View style={styles.titleWindow}>
 
                     <TouchableOpacity style={styles.svgContainer}
@@ -40,27 +41,15 @@ class Login extends React.Component {
                     
                     <View style={styles.titleContainer}>
         
-                        <Text style={styles.title}>Kevreadenn</Text>
+                        <Text style={styles.title}>Deiziad ganedigezh</Text>
 
-                        <Text style={styles.subtitle}>( connexion )</Text>
+                        <Text style={styles.subtitle}>( date de naissance )</Text>
 
                     </View>
 
                     <SafeAreaView>
 
-                        <TextInput style={styles.input}
-                            // onChangeText={onChangeText}
-                            // value={text}
-                            placeholder="Lesanv ( pseudonyme )"
-                            // keyboardType="text"
-                        />
-
-                        <TextInput style={styles.input}
-                            // onChangeText={onChangeNumber}
-                            // value={number}
-                            placeholder="Ger-tremen ( mot de passe )"
-                            // keyboardType="text"
-                        />
+                        <RNDateTimePicker display="spinner" mode="date" value={new Date()}/>
 
                     </SafeAreaView>
         
@@ -68,27 +57,27 @@ class Login extends React.Component {
                 
                 <View style={styles.buttonsContainer}>
         
-                  <TouchableOpacity style={styles.button}
-                    onPress={()=>
-                        this.props.navigation.navigate('Main')
-                    }
-                  >
+                    <TouchableOpacity style={styles.button} 
+                        onPress={()=>
+                            this.props.navigation.navigate('Roadennoù an arveriad')
+                        }
+                    >
         
-                    <Text style={styles.textButton}>Talvoudekaat</Text>
+                        <Text style={styles.textButton}>Kenderc'hel</Text>
         
-                  </TouchableOpacity>
+                    </TouchableOpacity>
         
-                  <TouchableOpacity style={styles.buttonText}
-                    onPress={()=>
-                      this.props.navigation.navigate('Deiziad ganedigezh')
-                    }
-                  >
+                    <TouchableOpacity style={styles.buttonText} 
+                        onPress={()=>
+                            this.props.navigation.navigate('Login')
+                        }
+                    >
         
-                    <Text style={styles.textButtonNoBorder}>Pas encore de compte ?</Text>
+                        <Text style={styles.textButtonNoBorder}>Déjà un compte ?</Text>
+            
+                        <Text style={styles.textButtonNoBorderOrange}>Kevreadenn</Text>
         
-                    <Text style={styles.textButtonNoBorderOrange}>Enskrivadur</Text>
-        
-                  </TouchableOpacity>
+                    </TouchableOpacity>
         
                 </View>
         
@@ -109,6 +98,24 @@ const styles = StyleSheet.create({
         backgroundColor: "#DDDCE1",
         alignItems: "center",
         justifyContent: "between",
+    },
+
+    inputDate: {
+        height: 60,
+        margin: 5,
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center",
+        // paddingHorizontal: 20,
+        width: screenWidth-20,
+        borderRadius: 20,
+        backgroundColor: "#DB8646",
+        borderColor: "#381C11",
+        borderWidth: 3,
+        overflow: "hidden",
+        color: "#381C11",
+        fontSize: 16,
+        fontWeight: "bold",
     },
 
     input: {
@@ -152,7 +159,7 @@ const styles = StyleSheet.create({
     },
 
     title: {
-        fontSize: 40,
+        fontSize: 30,
         fontWeight: "bold",
         color: "#381C11",
     },
@@ -215,7 +222,27 @@ const styles = StyleSheet.create({
         padding: 10,
         alignSelf: "flex-start",
     },
+
+    dateInputContainer: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        width: screenWidth-10,
+    },
+
+    dateInput: {
+        height: 60,
+        margin: 5,
+        paddingHorizontal: 20,
+        flex: 1,
+        borderRadius: 20,
+        backgroundColor: "#DB8646",
+        borderColor: "#381C11",
+        borderWidth: 3,
+        color: "#381C11",
+        fontSize: 16,
+        fontWeight: "bold",
+    },
   
 })
 
-export default withNavigation(Login)
+export default withNavigation(BirthDate)

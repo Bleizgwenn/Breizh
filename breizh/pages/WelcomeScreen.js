@@ -24,9 +24,15 @@ class WelcomeScreen extends React.Component {
         
           <View style={styles.imageContainer}>
   
-            <Image style={styles.image} source={require("../../assets/sant-brewen.jpg")} />
+            <Image style={styles.image} source={require("../assets/seizbreur-horse-2.png")} />
+                    
+            <View style={styles.titleContainer}>
   
-            <Text style={styles.title}>Breizh</Text>
+              <Text style={styles.title}>Breizh</Text>
+
+              <Text style={styles.subtitle}>Ensavadur Broadel Poblek Breizh</Text>
+
+            </View>
   
           </View>
           
@@ -44,7 +50,7 @@ class WelcomeScreen extends React.Component {
   
             <TouchableOpacity style={styles.button} 
               onPress={()=> 
-                this.props.navigation.navigate('Register')
+                this.props.navigation.navigate('Deiziad ganedigezh')
               }
             >
   
@@ -71,6 +77,25 @@ const styles = StyleSheet.create({
     backgroundColor: "#DDDCE1",
     alignItems: "center",
     justifyContent: "between",
+  },
+
+  titleContainer: {
+      alignItems: "center",
+      justifyContent: "center",
+      flexDirection: "column",
+      gap: 0,
+  },
+
+  title: {
+      fontSize: 30,
+      fontWeight: "bold",
+      color: "#381C11",
+  },
+
+  subtitle: {
+      fontSize: 15,
+      fontWeight: "thin",
+      color: "rgb(107 114 128)",
   },
 
   buttonsContainer: {

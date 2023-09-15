@@ -2,9 +2,11 @@ import React from 'react'
 import 'react-native-gesture-handler'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
-import WelcomeScreen from './pages/access/WelcomeScreen'
+import WelcomeScreen from './pages/WelcomeScreen'
 import Login from './pages/access/Login'
-import Register from './pages/access/Register'
+import BirthDate from './pages/access/register/BirthDate'
+import UserRegister from './pages/access/register/UserRegister'
+import MainContainer from './pages/MainContainer'
 
 //  Navigation
 const Stack = createStackNavigator()
@@ -26,9 +28,19 @@ export default function App() {
           options={{ title: "Login", headerShown: false }}
         />
         <Stack.Screen
-          name="Register"
-          component={Register}
-          options={{ title: "Register", headerShown: false }}
+          name="Deiziad ganedigezh"
+          component={BirthDate}
+          options={{ title: "Deiziad ganedigezh", headerShown: false }}
+        />
+        <Stack.Screen
+          name="Roadennoù an arveriad"
+          component={UserRegister}
+          options={{ title: "Roadennoù an arveriad", headerShown: false }}
+        />
+        <Stack.Screen
+          name="Main"
+          component={MainContainer}
+          options={{ title: "Main", headerShown: false }}
         />
       </Stack.Navigator>
     </NavigationContainer>

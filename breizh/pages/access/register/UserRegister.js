@@ -9,14 +9,14 @@ import {
 } from "react-native"
 import { withNavigation } from "react-navigation"
 import {Dimensions} from 'react-native'
-import LeftArrow from "../../components/svg/LeftArrow"
+import LeftArrow from "../../../components/svg/LeftArrow"
 import RNDateTimePicker from '@react-native-community/datetimepicker'
   
 //  Dimensions de l'écran
 const screenWidth = Dimensions.get('window').width
 const screenHeight = Dimensions.get('window').height
 
-class Register extends React.Component {
+class UserRegister extends React.Component {
 
     render(){
 
@@ -31,7 +31,7 @@ class Register extends React.Component {
 
                     <TouchableOpacity style={styles.svgContainer}
                         onPress={()=>
-                            this.props.navigation.navigate('Degemer Mat')
+                            this.props.navigation.navigate('Deiziad ganedigezh')
                         }
                     >
                         
@@ -41,15 +41,13 @@ class Register extends React.Component {
                     
                     <View style={styles.titleContainer}>
         
-                        <Text style={styles.title}>Enskrivadur</Text>
+                        <Text style={styles.title}>Krouit hoc'h aelad</Text>
 
-                        <Text style={styles.subtitle}>( inscription )</Text>
+                        <Text style={styles.subtitle}>( créez votre profil )</Text>
 
                     </View>
 
                     <SafeAreaView>
-
-                        <RNDateTimePicker style={styles.inputDate} mode="date" value={new Date()}/>
 
                         <TextInput style={styles.input}
                             // onChangeText={onChangeText}
@@ -90,23 +88,24 @@ class Register extends React.Component {
         
                     <TouchableOpacity style={styles.button} 
                     onPress={()=>
-                        alert("Button Clicked")
+                        this.props.navigation.navigate('Main')
                     }
                     >
         
-                    <Text style={styles.textButton}>Valider</Text>
+                    <Text style={styles.textButton}>Talvoudekaat</Text>
         
                     </TouchableOpacity>
         
                     <TouchableOpacity style={styles.buttonText} 
-                    onPress={()=>
-                        this.props.navigation.navigate('Login')
-                    }
+                        onPress={()=>
+                            // this.props.navigation.navigate('Login')
+                            alert("Afficher les conditions d'utilisation")
+                        }
                     >
         
-                    <Text style={styles.textButtonNoBorder}>Déjà un compte ?</Text>
-        
-                    <Text style={styles.textButtonNoBorderOrange}>Kevreadenn</Text>
+                        <Text style={styles.textButtonNoBorder}>En vous inscrivant, vous acceptez les</Text>
+            
+                        <Text style={styles.textButtonNoBorderOrange}>Conditions d'utilisation</Text>
         
                     </TouchableOpacity>
         
@@ -137,7 +136,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
-        paddingHorizontal: 20,
+        // paddingHorizontal: 20,
         width: screenWidth-20,
         borderRadius: 20,
         backgroundColor: "#DB8646",
@@ -190,7 +189,7 @@ const styles = StyleSheet.create({
     },
 
     title: {
-        fontSize: 40,
+        fontSize: 30,
         fontWeight: "bold",
         color: "#381C11",
     },
@@ -224,7 +223,7 @@ const styles = StyleSheet.create({
         height: 50,
         width: screenWidth-20,
         elevation: 2,
-        flexDirection: "row",
+        flexDirection: "column",
         gap: 5,
     },
 
@@ -276,4 +275,4 @@ const styles = StyleSheet.create({
   
 })
 
-export default withNavigation(Register)
+export default withNavigation(UserRegister)
