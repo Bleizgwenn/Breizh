@@ -19,9 +19,23 @@ class FeedScreen extends React.Component {
 
         return (
             
-            <View style={styles.containerMiddle}>
-                <Text>Feed ( Liste des actions réalisées par les amis )</Text>
-            </View>
+            <>
+
+                <View style={styles.topContainer}>
+                    
+                    <View style={styles.topTitleContainer}>
+
+                        <Text style={styles.topTitle}>Obererezh</Text>
+
+                    </View>
+
+                </View>
+            
+                <View style={styles.containerMiddle}>
+                    <Text>Feed ( Liste des actions réalisées par les amis )</Text>
+                </View>
+
+            </>
 
         )
 
@@ -38,6 +52,28 @@ const styles = StyleSheet.create({
         backgroundColor: "#DDDCE1",
         alignItems: "center",
         justifyContent: "center",
+    },
+
+    topContainer: {
+        paddingTop: 40,
+        width: screenWidth,
+        backgroundColor: "#381C11",
+        alignItems: "center",
+        justifyContent: "center",
+    },
+
+    topTitleContainer: {
+        height: 60,
+        width: screenWidth,
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+    },
+
+    topTitle: {
+        fontSize: 20,
+        fontWeight: "bold",
+        color: "#DDDCE1",
     },
   
 })

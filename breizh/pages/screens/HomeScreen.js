@@ -5,6 +5,7 @@ import {
     View,
     Text,
     StyleSheet,
+    Image,
 } from 'react-native'
 
 import {Dimensions} from 'react-native'
@@ -19,9 +20,26 @@ class HomeScreen extends React.Component {
 
         return (
             
-            <View style={styles.containerMiddle}>
-                <Text>Page ou l'on peut aisément sélectionner la leçon.</Text>
-            </View>
+            <>
+
+                <View style={styles.topContainer}>
+                    
+                    <View style={styles.topTitleContainer}>
+  
+                        <Image style={styles.emojiBzh} source={require("../../assets/bzh_emoji.png")} />
+
+                        <Text style={styles.topTitle}>Deskiñ</Text>
+  
+                        <Image style={styles.emojiBzh} source={require("../../assets/bzh_emoji.png")} />
+
+                    </View>
+                    
+                </View>
+            
+                <View style={styles.containerMiddle}>
+                </View>
+
+            </>
 
         )
 
@@ -38,6 +56,35 @@ const styles = StyleSheet.create({
         backgroundColor: "#DDDCE1",
         alignItems: "center",
         justifyContent: "center",
+    },
+
+    topContainer: {
+        paddingTop: 40,
+        width: screenWidth,
+        backgroundColor: "#DB8646",
+        alignItems: "center",
+        justifyContent: "center",
+        borderBottomWidth: 3,
+        borderBottomColor: "#381C11",
+    },
+
+    topTitleContainer: {
+        height: 60,
+        width: screenWidth-40,
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
+    },
+
+    topTitle: {
+        fontSize: 20,
+        fontWeight: "bold",
+        color: "#DDDCE1",
+    },
+
+    emojiBzh: {
+        height: 22,
+        width: 30,
     },
   
 })
