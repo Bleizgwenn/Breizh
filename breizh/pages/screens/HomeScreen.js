@@ -6,7 +6,9 @@ import {
     Text,
     StyleSheet,
     Image,
+    TouchableOpacity,
 } from 'react-native'
+import Selector from '../../components/svg/Selector'
 
 import {Dimensions} from 'react-native'
   
@@ -20,26 +22,57 @@ class HomeScreen extends React.Component {
 
         return (
             
-            <>
+            <View style={styles.windowContainer}>
+                
+                <View id={"window"} style={styles.window}>
 
-                <View style={styles.topContainer}>
-                    
-                    <View style={styles.topTitleContainer}>
-  
-                        <Image style={styles.emojiBzh} source={require("../../assets/bzh_emoji.png")} />
+                    <View style={styles.topContainer}>
+                        
+                        <View style={styles.topTitleContainer}>
+    
+                            <Image style={styles.emojiBzh} source={require("../../assets/bzh_emoji.png")} />
 
-                        <Text style={styles.topTitle}>Deskiñ</Text>
-  
-                        <Image style={styles.emojiBzh} source={require("../../assets/bzh_emoji.png")} />
+                            <Text style={styles.topTitle}>Deskiñ</Text>
+    
+                            <Image style={styles.emojiBzh} source={require("../../assets/bzh_emoji.png")} />
+
+                        </View>
+                        
+                    </View>
+
+                    <TouchableOpacity style={styles.selectLevelContainer}>
+
+                        <View style={styles.infosLevel}>
+
+                            <Text style={styles.infosLevelPetit}>Section 1, unité 1</Text>
+
+                            <Text style={styles.infosLevelGros}>Les bases de la lecture et de l'écriture en breton.</Text>
+
+                        </View>
+
+                        <View style={styles.selectLevel}>
+                            
+                            <Selector />
+
+                        </View>
+
+                    </TouchableOpacity>
+                
+                    <View style={styles.containerMiddle}>
+
+                        <Text>Nous sommes les exercices</Text>
 
                     </View>
-                    
-                </View>
-            
-                <View style={styles.containerMiddle}>
+
                 </View>
 
-            </>
+                <View id={"modale"} style={styles.modale}>
+
+                    
+
+                </View>
+
+            </View>
 
         )
 
@@ -85,6 +118,63 @@ const styles = StyleSheet.create({
     emojiBzh: {
         height: 22,
         width: 30,
+    },
+
+    selectLevelContainer: {
+        backgroundColor: "black",
+        borderRadius: 20,
+        margin: 10,
+        height: 100,
+        width: screenWidth-20,
+        elevation: 2,
+        gap: 4,
+        flexDirection: "row",
+    },
+
+    infosLevel: {
+        padding: 16,
+        width: "80%",
+        backgroundColor: "#381C11",
+        borderTopLeftRadius: 20,
+        borderBottomLeftRadius: 20,
+        height: "100%",
+        gap: 4,
+    },
+
+    infosLevelPetit: {
+        fontSize: 12.5,
+        fontWeight: "bold",
+        color: "#DDDCE1",
+    },
+
+    infosLevelGros: {
+        fontSize: 15,
+        fontWeight: "bold",
+        color: "#DDDCE1",
+    },
+
+    selectLevel: {
+        width: ((screenWidth-20)/100)*20-4,
+        backgroundColor: "#381C11",
+        borderTopRightRadius: 20,
+        borderBottomRightRadius: 20,
+        alignItems: "center",
+        justifyContent: "center",
+        height: "100%",
+    },
+
+    // Elements de fenêtre
+
+    windowContainer: {
+
+    },
+
+    window: {
+
+    },
+
+    modale: {
+
     },
   
 })
