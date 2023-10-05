@@ -25,8 +25,14 @@ function ProgramDialogBox({dialog}){
                 </View>
 
                 <View style={styles.questionTextContainer}>
-                    
-                    <VolumeSpeaker/>
+
+                    <TouchableOpacity
+                        // onPress={()=>setOpenModale2(!openModale2)}
+                    >
+                        
+                        <VolumeSpeaker/>
+
+                    </TouchableOpacity>
 
                     <View>
 
@@ -49,8 +55,14 @@ function ProgramDialogBox({dialog}){
                     </View>
 
                     <View style={styles.answerTextContainer}>
-                        
-                        <VolumeSpeaker/>
+
+                        <TouchableOpacity
+                            // onPress={()=>setOpenModale2(!openModale2)}
+                        >
+                            
+                            <VolumeSpeaker/>
+
+                        </TouchableOpacity>
 
                         <View>
 
