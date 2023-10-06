@@ -55,7 +55,7 @@ class MainContainer extends React.Component {
                         tabBarStyle: {
                             backgroundColor: '#381C11',
                             height: 90,
-                        }
+                        },
                     })}
                 >
 

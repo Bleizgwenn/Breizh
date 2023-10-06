@@ -28,6 +28,7 @@ import WhiteButton from '../../components/buttons/WhiteButton'
 import LevelProgressBar from '../../components/progress-bar/LevelProgressBar'
 import ModaleBottomTop from '../../components/modale/ModaleBottomTop'
 import SectionKeyWords from '../../components/section/SectionKeyWords'
+import SectionSelectExercice from '../../components/section/SectionSelectExercice'
   
 //  Dimensions de l'écran
 const screenWidth = Dimensions.get('window').width
@@ -320,7 +321,7 @@ function Sommaire() {
 
     return (
 
-        <ScrollView style={styles.dialogBoxContainer}>
+        <ScrollView showsVerticalScrollIndicator={false} style={styles.dialogBoxContainer}>
 
             <View style={styles.presentationProgrammeBox}>
 
@@ -335,13 +336,13 @@ function Sommaire() {
 
             </View>
             
-            <View>
+            <View style={styles.sommaireContainerUnique}>
 
-                {/* <SectionKeyWords unit={listArray1}/> */}
+                <SectionKeyWords unit={listArray1}/>
 
                 <SectionKeyWords unit={listArray2}/>
 
-                {/* <SectionKeyWords unit={listArray3}/> */}
+                <SectionKeyWords unit={listArray3}/>
 
             </View>
 
@@ -350,7 +351,6 @@ function Sommaire() {
       )
 }
 
-
 function HomeScreen() {
 
     const [openModale1,setOpenModale1] = useState(false)
@@ -358,49 +358,45 @@ function HomeScreen() {
 
     return (
         
-        <>
-            
-            <View style={styles.window}>
+        <View style={{marginBottom:210,backgroundColor:"gray"}}>
 
-                <View style={styles.topContainer}>
+            <View style={styles.topContainer}>
+                
+                <View style={styles.topTitleContainer}>
+
+                    <Text style={styles.topTitle}>Deskiñ</Text>
+
+                </View>
+                
+            </View>
+
+            <View style={styles.selectLevelContainer}>
+
+                <TouchableOpacity style={styles.infosLevel}
+                    onPress={()=>setOpenModale1(!openModale1)}
+                >
+
+                    <Text style={styles.infosLevelPetit}>Section 1, Unité 1 :</Text>
+
+                    <Text style={styles.infosLevelGros}>Les bases de la lecture et de l'écriture en breton.</Text>
+
+                </TouchableOpacity>
+
+                <TouchableOpacity style={styles.selectLevel}
+                    onPress={()=>setOpenModale2(!openModale2)}
+                >
                     
-                    <View style={styles.topTitleContainer}>
+                    <Selector />
 
-                        <Text style={styles.topTitle}>Deskiñ</Text>
-
-                    </View>
-                    
-                </View>
-
-                <View style={styles.selectLevelContainer}>
-
-                    <TouchableOpacity style={styles.infosLevel}
-                        onPress={()=>setOpenModale1(!openModale1)}
-                    >
-
-                        <Text style={styles.infosLevelPetit}>Section 1, Unité 1 :</Text>
-
-                        <Text style={styles.infosLevelGros}>Les bases de la lecture et de l'écriture en breton.</Text>
-
-                    </TouchableOpacity>
-
-                    <TouchableOpacity style={styles.selectLevel}
-                        onPress={()=>setOpenModale2(!openModale2)}
-                    >
-                        
-                        <Selector />
-
-                    </TouchableOpacity>
-
-                </View>
-            
-                <View style={styles.containerMiddle}>
-
-                    <Text>Nous sommes les exercices</Text>
-
-                </View>
+                </TouchableOpacity>
 
             </View>
+            
+            <ScrollView contentContainerStyle={styles.window} showsVerticalScrollIndicator={false}>
+
+                <SectionSelectExercice/>
+
+            </ScrollView>
 
             <ModaleBottomTop
                 text={"cours de Breton"}
@@ -418,7 +414,7 @@ function HomeScreen() {
                 openValue={openModale2}
             />
 
-        </>
+        </View>
 
     )
 
@@ -464,8 +460,11 @@ const styles = StyleSheet.create({
 
     selectLevelContainer: {
         backgroundColor: "black",
+        position: "sticky",
+        top: 0,
         borderRadius: 20,
-        margin: 10,
+        marginTop: 10,
+        marginHorizontal: 10,
         height: 100,
         width: screenWidth-20,
         elevation: 2,
@@ -507,7 +506,8 @@ const styles = StyleSheet.create({
 
     window: {
         width: screenWidth,
-        height: screenHeight,
+        backgroundColor: "gray",
+        position: "relative",
     },
 
     // Styles de la modale
@@ -670,7 +670,11 @@ const styles = StyleSheet.create({
     sectionKeyWords: {
         borderBottomColor: "darkpurple",
         borderBottomWidth: 4,
-    }
+    },
+
+    sommaireContainerUnique: {
+        marginBottom: 70,
+    },
     
 })
 

@@ -66,6 +66,7 @@ const styles = StyleSheet.create({
         justifyContent: "flex-start",
         alignItems: "flex-start",
         textAlign: "left",
+        marginBottom: 20,
     },
 
     dialogBoxMap: {

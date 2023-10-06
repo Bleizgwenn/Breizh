@@ -8,6 +8,7 @@ import {
 } from 'react-native'
 import HalfTriangle from '../svg/HalfTriangle'
 import VolumeSpeaker from '../svg/VolumeSpeaker'
+import AudioPlayerSpeakerButton from '../buttons/AudioPlayerSpeakerButton'
   
 //  Dimensions de l'écran
 const screenWidth = Dimensions.get('window').width
@@ -25,14 +26,8 @@ function ProgramDialogBox({dialog}){
                 </View>
 
                 <View style={styles.questionTextContainer}>
-
-                    <TouchableOpacity
-                        // onPress={()=>setOpenModale2(!openModale2)}
-                    >
                         
-                        <VolumeSpeaker/>
-
-                    </TouchableOpacity>
+                    <AudioPlayerSpeakerButton audio={require('../../assets/audio/0001_xDWvE1QO.mp3')}/>
 
                     <View>
 
@@ -55,14 +50,8 @@ function ProgramDialogBox({dialog}){
                     </View>
 
                     <View style={styles.answerTextContainer}>
-
-                        <TouchableOpacity
-                            // onPress={()=>setOpenModale2(!openModale2)}
-                        >
-                            
-                            <VolumeSpeaker/>
-
-                        </TouchableOpacity>
+                        
+                        <AudioPlayerSpeakerButton audio={require('../../assets/audio/0001.mp3')}/>
 
                         <View>
 
