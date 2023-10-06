@@ -7,12 +7,35 @@ import {
     ScrollView,
 } from 'react-native'
 import ProgramDialogBox from '../dialog/ProgramDialogBox'
+import SectionExerciceList from './SectionExerciceList'
   
 //  Dimensions de l'écran
 const screenWidth = Dimensions.get('window').width
 const screenHeight = Dimensions.get('window').height
 
-function SectionSelectExercice({unit}){
+function SectionSelectExercice(){
+
+    const listexercices1 = [
+        {'title':'Make introductions'},
+        {'title':'Make introductions'},
+        {'title':'Talk about your job'},
+        {'title':'Make introductions'},
+        {'title':'Talk about your job'},
+        {'title':'Talk about your job'},
+        {'title':'Talk about your job'},
+        {'title':'Make introductions'},
+    ]
+
+    const listexercices2 = [
+        {'title':'Make introductions'},
+        {'title':'Make introductions'},
+        {'title':'Talk about your job'},
+        {'title':'Make introductions'},
+        {'title':'Talk about your job'},
+        {'title':'Talk about your job'},
+        {'title':'Talk about your job'},
+        {'title':'Make introductions'}
+    ]
 
     return(
 
@@ -42,29 +65,7 @@ function SectionSelectExercice({unit}){
 
                 </View>
                 
-                <View style={{gap:10}}>
-
-                    <View style={{backgroundColor:"white",borderRadius:"full",height:40,width:40}} />
-
-                    <View style={{backgroundColor:"white",borderRadius:"full",height:40,width:40}} />
-
-                    <View style={{backgroundColor:"white",borderRadius:"full",height:40,width:40}} />
-
-                    <View style={{backgroundColor:"white",borderRadius:"full",height:40,width:40}} />
-
-                    <View style={{backgroundColor:"white",borderRadius:"full",height:40,width:40}} />
-
-                    <View style={{backgroundColor:"white",borderRadius:"full",height:40,width:40}} />
-
-                    <View style={{backgroundColor:"white",borderRadius:"full",height:40,width:40}} />
-
-                    <View style={{backgroundColor:"white",borderRadius:"full",height:40,width:40}} />
-
-                    <View style={{backgroundColor:"white",borderRadius:"full",height:40,width:40}} />
-
-                    <View style={{backgroundColor:"white",borderRadius:"full",height:40,width:40}} />
-
-                </View>
+                <SectionExerciceList exerciceslist={listexercices1}/>
 
             </View>
             
@@ -92,29 +93,7 @@ function SectionSelectExercice({unit}){
 
                 </View>
                 
-                <View style={{gap:10}}>
-
-                    <View style={{backgroundColor:"white",borderRadius:"full",height:40,width:40}} />
-
-                    <View style={{backgroundColor:"white",borderRadius:"full",height:40,width:40}} />
-
-                    <View style={{backgroundColor:"white",borderRadius:"full",height:40,width:40}} />
-
-                    <View style={{backgroundColor:"white",borderRadius:"full",height:40,width:40}} />
-
-                    <View style={{backgroundColor:"white",borderRadius:"full",height:40,width:40}} />
-
-                    <View style={{backgroundColor:"white",borderRadius:"full",height:40,width:40}} />
-
-                    <View style={{backgroundColor:"white",borderRadius:"full",height:40,width:40}} />
-
-                    <View style={{backgroundColor:"white",borderRadius:"full",height:40,width:40}} />
-
-                    <View style={{backgroundColor:"white",borderRadius:"full",height:40,width:40}} />
-
-                    <View style={{backgroundColor:"white",borderRadius:"full",height:40,width:40}} />
-
-                </View>
+                <SectionExerciceList exerciceslist={listexercices2}/>
 
             </View>
 
