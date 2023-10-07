@@ -21,20 +21,26 @@ function SectionExerciceList({exerciceslist}){
         return(
             exercices.map((exo,index)=>{
                 return(
-                    <View key={index} 
+                    <View key={index}
                         style={
-                            [
-                                styles.circle,
-                                index/(exercices.length)===1/2||index===0?null:(Math.trunc(index/4))%2===0?
-                                    (index%4+1)===3?{transform:`translateX(${75}px)`}:{transform:`translateX(${50}px)`}
-                                    :
-                                    (index%4+1)===3?{transform:`translateX(-${75}px)`}:{transform:`translateX(-${50}px)`}
-                                ,
-                                (index%4+1)/4===1?styles.coffre:null
-                            ]
+                            index/(exercices.length)===1/2||index===0?null:(Math.trunc(index/4))%2===0?
+                                (index%4+1)===3?{transform:`translateX(${75}px)`}:{transform:`translateX(${50}px)`}
+                                :
+                                (index%4+1)===3?{transform:`translateX(-${75}px)`}:{transform:`translateX(-${50}px)`}
                         }
                     >
-                        {(index%4+1)/4===1?<Treasure/>:<StarIcon/>}
+
+                        <TouchableOpacity
+                            style={
+                                [
+                                    styles.circle,
+                                    (index%4+1)/4===1?styles.coffre:null
+                                ]
+                            }
+                        >
+                            {(index%4+1)/4===1?<Treasure/>:<StarIcon/>}
+
+                        </TouchableOpacity>
 
                     </View>
                 )
@@ -48,9 +54,9 @@ function SectionExerciceList({exerciceslist}){
             
             <List exercices={exerciceslist}/>
 
-            <View style={[styles.circle,styles.trophée]}>
+            <TouchableOpacity style={[styles.circle,styles.trophée]}>
                 <Trophy/>
-            </View>
+            </TouchableOpacity>
 
         </View>
 

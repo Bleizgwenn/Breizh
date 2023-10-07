@@ -8,6 +8,7 @@ import {
 } from 'react-native'
 import ProgramDialogBox from '../dialog/ProgramDialogBox'
 import SectionExerciceList from './SectionExerciceList'
+import LockerFilled from '../svg/LockerFilled'
   
 //  Dimensions de l'écran
 const screenWidth = Dimensions.get('window').width
@@ -41,59 +42,112 @@ function SectionSelectExercice(){
 
         <View style={styles.dialogBoxContainer}>
             
-            <View>
+            <View style={{padding:10,marginVertical:20,}}>
             
-                <View style={styles.unitTextContainer}>
-                    
-                    <View
-                        style={{
-                            flex:1,
-                            borderBottomColor: 'white',
-                            borderBottomWidth: 2,
-                        }}
-                    />
+                <View>
+                
+                    <View style={styles.unitTextContainer}>
+                        
+                        <View
+                            style={{
+                                flex:1,
+                                borderBottomColor: 'white',
+                                borderBottomWidth: 2,
+                            }}
+                        />
 
-                    <Text style={styles.topTitle}>Bases de la lecture et de l'écriture</Text>
+                        <Text style={styles.topTitle}>Bases de la lecture et de l'écriture</Text>
+                        
+                        <View
+                            style={{
+                                flex:1,
+                                borderBottomColor: 'white',
+                                borderBottomWidth: 2,
+                            }}
+                        />
+
+                    </View>
                     
-                    <View
-                        style={{
-                            flex:1,
-                            borderBottomColor: 'white',
-                            borderBottomWidth: 2,
-                        }}
-                    />
+                    <SectionExerciceList exerciceslist={listexercices1}/>
 
                 </View>
                 
-                <SectionExerciceList exerciceslist={listexercices1}/>
+                <View>
+                
+                    <View style={styles.unitTextContainer}>
+                        
+                        <View
+                            style={{
+                                flex:1,
+                                borderBottomColor: 'white',
+                                borderBottomWidth: 2,
+                            }}
+                        />
+
+                        <Text style={styles.topTitle}>Bases de la lecture et de l'écriture</Text>
+                        
+                        <View
+                            style={{
+                                flex:1,
+                                borderBottomColor: 'white',
+                                borderBottomWidth: 2,
+                            }}
+                        />
+
+                    </View>
+                    
+                    <SectionExerciceList exerciceslist={listexercices2}/>
+
+                </View>
+                
+                <View>
+                
+                    <View style={styles.unitTextContainer}>
+                        
+                        <View
+                            style={{
+                                flex:1,
+                                borderBottomColor: 'white',
+                                borderBottomWidth: 2,
+                            }}
+                        />
+
+                        <Text style={styles.topTitle}>Bases de la lecture et de l'écriture</Text>
+                        
+                        <View
+                            style={{
+                                flex:1,
+                                borderBottomColor: 'white',
+                                borderBottomWidth: 2,
+                            }}
+                        />
+
+                    </View>
+                    
+                    <SectionExerciceList exerciceslist={listexercices2}/>
+
+                </View>
 
             </View>
-            
-            <View>
-            
-                <View style={styles.unitTextContainer}>
-                    
-                    <View
-                        style={{
-                            flex:1,
-                            borderBottomColor: 'white',
-                            borderBottomWidth: 2,
-                        }}
-                    />
 
-                    <Text style={styles.topTitle}>Bases de la lecture et de l'écriture</Text>
-                    
-                    <View
-                        style={{
-                            flex:1,
-                            borderBottomColor: 'white',
-                            borderBottomWidth: 2,
-                        }}
-                    />
+            <View style={styles.sectionGoToNext}>
 
+                <View style={styles.badgeNext}>
+                    <Text style={styles.badgeText}>UP NEXT</Text>
                 </View>
-                
-                <SectionExerciceList exerciceslist={listexercices2}/>
+
+                <View style={styles.sectionTitleContainer}>
+                    <LockerFilled/>
+                    <Text style={styles.sectionTitle}>Section 3 : Traveler</Text>
+                </View>
+
+                <Text style={styles.textDescription}>
+                    Learn more foundational concepts and sentences for basic conversations
+                </Text>
+
+                <TouchableOpacity style={styles.buttonJumpHere}>
+                    <Text style={styles.textButton}>Jump here</Text>
+                </TouchableOpacity>
 
             </View>
 
@@ -110,7 +164,6 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         height: '100%',
         width: screenWidth,
-        padding: 10,
         alignContent: "center",
     },
 
@@ -127,6 +180,63 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         color: "white",
         maxWidth: "50%",
+        textAlign: "center",
+    },
+
+    sectionGoToNext: {
+        padding: 20,
+        alignItems: "center",
+        justifyContent: "center",
+        gap: 20,
+        backgroundColor: "gray",
+    },
+
+    badgeNext: {
+        padding: 7,
+        borderRadius: 10,
+        backgroundColor: "#381C11"
+    },
+
+    badgeText: {
+        fontSize: 10,
+        fontWeight: "bold",
+        color: "white",
+        textAlign: "center",
+    },
+
+    sectionTitleContainer: {
+        gap: 4,
+        flexDirection: "row",
+    },
+
+    sectionTitle: {
+        fontSize: 17.5,
+        fontWeight: "bold",
+        color: "#DDDCE1",
+        textAlign: "center",
+    },
+
+    textDescription: {
+        fontSize: 15,
+        fontWeight: "bold",
+        color: "#DDDCE1",
+        textAlign: "center",
+    },
+
+    buttonJumpHere: {
+        backgroundColor: "#381C11",
+        borderRadius: 20,
+        padding: 16,
+        alignItems: "center",
+        height: 50,
+        width: screenWidth-20,
+        elevation: 2,
+    },
+
+    textButton: {
+        fontSize: 15,
+        fontWeight: "bold",
+        color: "#DDDCE1",
         textAlign: "center",
     },
 

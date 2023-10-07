@@ -358,7 +358,7 @@ function HomeScreen() {
 
     return (
         
-        <View style={{marginBottom:210,backgroundColor:"gray"}}>
+        <View style={{marginBottom:210,backgroundColor:"lightgray"}}>
 
             <View style={styles.topContainer}>
                 
@@ -506,7 +506,7 @@ const styles = StyleSheet.create({
 
     window: {
         width: screenWidth,
-        backgroundColor: "gray",
+        backgroundColor: "lightgray",
         position: "relative",
     },
 
