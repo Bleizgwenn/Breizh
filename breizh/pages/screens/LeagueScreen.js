@@ -6,12 +6,14 @@ import {
     Text,
     StyleSheet,
     FlatList,
-    Image
+    Image,
+    ScrollView
 } from 'react-native'
 import { useCallback } from 'react'
 
 import {Dimensions} from 'react-native'
 import Shield from '../../components/svg/Shield'
+import UserProfileExp from '../../components/user/UserProfileExp'
   
 //  Dimensions de l'écran
 const screenWidth = Dimensions.get('window').width
@@ -48,37 +50,138 @@ class LeagueScreen extends React.Component {
                 />
             )
         }
-
-        function dateDifference(date2, date1) {
-            const _MS_PER_DAY = 1000 * 60 * 60 * 24
-
-            console.log(date1)
-
-            console.log(date2)
         
-            // Discard the time and time-zone information.
-            const utc1 = Date.UTC(date1.getFullYear(), date1.getMonth(), date1.getDate())
-            const utc2 = Date.UTC(date2.getFullYear(), date2.getMonth(), date2.getDate())
+        function dayDiff(d1, d2) {
+            d1 = d1.getTime()/86400000
+            d2 = d2.getTime()/86400000
+            return d2 - d1
+        }
         
-            return Math.floor((utc2 - utc1) / _MS_PER_DAY)
+        function dateDiff(date1, date2){
+            var diff = {}                          // Initialisation du retour
+            var tmp = date2 - date1
+         
+            tmp = Math.floor(tmp/1000)             // Nombre de secondes entre les 2 dates
+            diff.sec = tmp % 60                    // Extraction du nombre de secondes
+         
+            tmp = Math.floor((tmp-diff.sec)/60)    // Nombre de minutes (partie entière)
+            diff.min = tmp % 60                    // Extraction du nombre de minutes
+         
+            tmp = Math.floor((tmp-diff.min)/60)    // Nombre d'heures (entières)
+            diff.hour = tmp % 24                   // Extraction du nombre d'heures
+             
+            tmp = Math.floor((tmp-diff.hour)/24)   // Nombre de jours restants
+            diff.day = tmp
+             
+            return diff
         }
 
-        const currentDate = new Date().toLocaleString({timeZone: "France/Paris"})
-        const date = new Date()
-        const sundayDate = new Date(date.setDate(date.getDate()-date.getDay()+7))
-        const sundayPreciseDate = new Date(`${sundayDate.getFullYear()}-${sundayDate.getMonth()+1}-${sundayDate.getDate()}`)
-        
-        console.log(sundayDate)
+        function nextSunday(current,date1,date2) {
 
-        // console.log(dateDifference(sundayPreciseDate,currentDate))
+            if(Math.sign(dayDiff(current,date1))!==-1){
 
-        if(currentDate){ // Si nous ne sommes pas dimanche prochain
+                const diff = dateDiff(current, date1)
+
+                if(diff.day!==0){
+                    
+                    return(
+                        {'unit':'day','value':diff.day}
+                    )
+
+                }else{
+
+                    if(diff.hour!==0){
+                    
+                        return(
+                            {'unit':'hour','value':diff.hour}
+                        )
+
+                    }else{
+                    
+                        return(
+                            {'unit':'minute','value':diff.min}
+                        )
+    
+                    }
+
+                }
+            
+            }else{
+
+                const diff = dateDiff(current, date2)
+
+                if(diff.day!==0){
+                    
+                    return(
+                        {'unit':'day','value':diff.day}
+                    )
+
+                }else{
+
+                    if(diff.hour!==0){
+                    
+                        return(
+                            {'unit':'hour','value':diff.hour}
+                        )
+
+                    }else{
+                    
+                        return(
+                            {'unit':'minute','value':diff.min}
+                        )
+    
+                    }
+
+                }
+
+            }
 
         }
+
+        const currentDate = new Date()
+        const dateOne = new Date()
+        const dateSecond = new Date()
+        const sundayDateOne = new Date(new Date(new Date(new Date(dateOne.setDate(dateOne.getDate()-dateOne.getDay()+0)).setHours(23)).setMinutes(59)).setSeconds(59))
+        const sundayDateSecond = new Date(new Date(new Date(new Date(dateSecond.setDate(dateSecond.getDate()-dateSecond.getDay()+7)).setHours(23)).setMinutes(59)).setSeconds(59))
+
+        const time = nextSunday(currentDate,sundayDateOne,sundayDateSecond)
+
+        const listUsers = [
+            {'username':'Jane Doe','score':125},
+            {'username':'Jean François','score':224},
+            {'username':'Jane Doe','score':125},
+            {'username':'Jane Doe','score':125},
+            {'username':'Jane Doe','score':125},
+            {'username':'Jane Doe','score':125},
+            {'username':'Jane Doe','score':125},
+            {'username':'Jane Doe','score':125},
+            {'username':'Jane Doe','score':125},
+            {'username':'Jane Doe','score':125},
+            {'username':'Jane Doe','score':125},
+            {'username':'Jane Doe','score':125},
+            {'username':'Jane Doe','score':125},
+            {'username':'Jane Doe','score':125},
+            {'username':'Jane Doe','score':125},
+            {'username':'Jane Doe','score':125},
+            {'username':'Jane Doe','score':125},
+            {'username':'Jane Doe','score':125},
+            {'username':'Jane Doe','score':125},
+            {'username':'Jane Doe','score':125},
+            {'username':'Jane Doe','score':125},
+            {'username':'Jane Doe','score':125},
+            {'username':'Jane Doe','score':125},
+            {'username':'Jane Doe','score':125},
+            {'username':'Jane Doe','score':125},
+            {'username':'Jane Doe','score':125},
+            {'username':'Jane Doe','score':125},
+            {'username':'Jane Doe','score':125},
+            {'username':'Jane Doe','score':125},
+            {'username':'Jane Doe','score':125},
+        ]
 
         return (
             
-            <>
+            <View style={{marginBottom:210,backgroundColor:"lightgray"}}>
 
                 <View style={styles.topContainer}>
                     
@@ -92,19 +195,36 @@ class LeagueScreen extends React.Component {
 
                             <Text style={styles.leagueTextDescriptif}>Top 7 advance to the next league</Text>
 
-                            <Text style={styles.topTitle}>20 hours</Text>
+                            <Text style={styles.topTitle}>{time.value} {time.unit}{time.value===1?null:'s'}</Text>
 
                         </View>
 
                     </View>
                     
                 </View>
-                
-                <View style={styles.containerMiddle}>
-                    <Text>Page de la league ( nombre d'exp contrairement aux adversaires )</Text>
-                </View>
+            
+                <ScrollView contentContainerStyle={styles.containerMiddle} showsVerticalScrollIndicator={false}>
+                    
+                    <View style={{
+                        minHeight: "100%",
+                        flexDirection: 'column',
+                        height: '100%',
+                        width: screenWidth,
+                        alignContent: "center",
+                        paddingVertical:10,
+                    }}>
+                        
+                        {listUsers.map((user,index)=>{
+                            return(
+                                <UserProfileExp user={user} index={index} key={index} />
+                            )
+                        })}
 
-            </>
+                    </View>
+
+                </ScrollView>
+
+            </View>
 
         )
 
@@ -115,12 +235,9 @@ class LeagueScreen extends React.Component {
 const styles = StyleSheet.create({
 
     containerMiddle: {
-        flex: 1,
-        height: screenHeight,
         width: screenWidth,
-        backgroundColor: "#DDDCE1",
-        alignItems: "center",
-        justifyContent: "center",
+        backgroundColor: "lightgray",
+        position: "relative",
     },
 
     topContainer: {

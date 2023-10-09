@@ -5,53 +5,67 @@ import {
     View,
     Text,
     StyleSheet,
+    ScrollView
 } from 'react-native'
 
 import {Dimensions} from 'react-native'
+import FriendAction from '../../components/feed/FriendAction'
+import Announcement from '../../components/feed/Announcement'
   
 //  Dimensions de l'écran
 const screenWidth = Dimensions.get('window').width
 const screenHeight = Dimensions.get('window').height
 
-class FeedScreen extends React.Component {
+function FeedScreen(){
+
+    return (
+        
+        <>
+
+            <View style={styles.topContainer}>
+                
+                <View style={styles.topTitleContainer}>
+
+                    <Text style={styles.topTitle}>Obererezh</Text>
+
+                </View>
+
+            </View>
     
-    render() {
-
-        return (
-            
-            <>
-
-                <View style={styles.topContainer}>
+            <ScrollView contentContainerStyle={styles.containerMiddle} showsVerticalScrollIndicator={false}>
+                
+                <View 
+                    style={{
+                        minHeight: "100%",
+                        flexDirection: 'column',
+                        height: '100%',
+                        width: screenWidth,
+                        alignContent: "center",
+                    }}
+                >
                     
-                    <View style={styles.topTitleContainer}>
+                    <FriendAction/>
 
-                        <Text style={styles.topTitle}>Obererezh</Text>
-
-                    </View>
+                    <Announcement/>
+                    
+                    <FriendAction/>
 
                 </View>
-            
-                <View style={styles.containerMiddle}>
-                    <Text>Feed ( Liste des actions réalisées par les amis )</Text>
-                </View>
 
-            </>
+            </ScrollView>
 
-        )
+        </>
 
-    }
+    )
 
 }
   
 const styles = StyleSheet.create({
 
     containerMiddle: {
-        flex: 1,
-        height: screenHeight,
         width: screenWidth,
-        backgroundColor: "#DDDCE1",
-        alignItems: "center",
-        justifyContent: "center",
+        backgroundColor: "lightgray",
+        position: "relative",
     },
 
     topContainer: {

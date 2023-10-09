@@ -9,6 +9,7 @@ import HomeScreen from './screens/HomeScreen'
 import FeedScreen from './screens/FeedScreen'
 import LeagueScreen from './screens/LeagueScreen'
 import ProfileScreen from './screens/ProfileScreen'
+import DailyMission from './screens/DailyMission'
 
 import {Dimensions} from 'react-native'
   
@@ -22,6 +23,7 @@ const HomeScreenName = "HomeScreen"
 const FeedScreenName = "FeedScreen"
 const LeagueScreenName = "LeagueScreen"
 const ProfileScreenName = "ProfileScreen"
+const DailyMissionName = "DailyMission"
 
 const Tab = createBottomTabNavigator()
 
@@ -46,6 +48,8 @@ class MainContainer extends React.Component {
                                 iconName = focused ? 'trophy' : 'trophy'
                             } else if (route.name === ProfileScreenName) {
                                 iconName = focused ? 'person' : 'person'
+                            } else if (route.name === DailyMissionName) {
+                                iconName = focused ? 'grid-outline' : 'grid-outline'
                             }
                             return <Ionicons name={iconName} size={size} color={color} />
                         },
@@ -62,6 +66,8 @@ class MainContainer extends React.Component {
                     <Tab.Screen name={HomeScreenName} component={HomeScreen} options={{ headerShown: false }}/>
 
                     <Tab.Screen name={LeagueScreenName} component={LeagueScreen} options={{ headerShown: false }}/>
+
+                    <Tab.Screen name={DailyMissionName} component={DailyMission} options={{ headerShown: false }}/>
 
                     <Tab.Screen name={ProfileScreenName} component={ProfileScreen} options={{ headerShown: false }}/>
 
