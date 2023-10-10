@@ -5,23 +5,26 @@ import {
     View,
 } from 'react-native'
 
-function LevelProgressBar({used,max,text,fontcolor,linebgcolor}){
+function FriendQuestProgressBar({max,score1,score2,text,fontcolor,linebgcolor}){
     return(
         <View style={styles.containerClass}>
 
             <View style={[styles.containerMax,linebgcolor?{backgroundColor:linebgcolor,}:{backgroundColor:"lightgreen",}]}>
                 <View style={
                     {
-                        width: `${((used*100)/max)}%`,
-                        flex:1,
-                        // padding:2,
-                        backgroundColor: "white",
-                        borderRadius: "100%",
+                        width: `${((score1*100)/(max))}%`,
+                        backgroundColor: "blue",
+                    }
+                }/>
+                <View style={
+                    {
+                        width: `${((score2*100)/(max))}%`,
+                        backgroundColor: "yellow",
                     }
                 }/>
             </View>
 
-            <Text style={[styles.text,fontcolor?{color:fontcolor}:{color:"#DDDCE1"}]} >{used} / {max} {text}</Text>
+            <Text style={[styles.text,fontcolor?{color:fontcolor}:{color:"#DDDCE1"}]} >{score2} / 100</Text>
 
         </View>
     )
@@ -37,7 +40,7 @@ const styles = StyleSheet.create({
     containerClass: {
         width: "100%",
         flex: 1,
-        flexDirection: "row",
+        flexDirection: "column",
         gap: 16,
         alignContent: "flex-start",
         justifyContent: "flex-start",
@@ -45,6 +48,8 @@ const styles = StyleSheet.create({
 
     containerMax: {
         width: "100%",
+        flexDirection:"row",
+        overflow:"hidden",
         flex:1,
         height: 20,
         borderRadius: "100%",
@@ -52,4 +57,4 @@ const styles = StyleSheet.create({
 
 })
 
-export default LevelProgressBar
+export default FriendQuestProgressBar

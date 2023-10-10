@@ -210,7 +210,7 @@ function Carousel() {
             horizontal
             showsHorizontalScrollIndicator={false}
             onScroll={onScroll}
-            {...flatListOptimizationProps}
+            // {...flatListOptimizationProps}
         />
 
         <Pagination index={index}/>

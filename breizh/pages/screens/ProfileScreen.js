@@ -19,255 +19,19 @@ import Trophy from '../../components/svg/Trophy'
 import LevelProgressBar from '../../components/progress-bar/LevelProgressBar'
 import LeftArrow from '../../components/svg/LeftArrow'
 import SectionSettings from '../../components/section/SectionSettings'
+import AchievementSection from '../../components/section/AchievementSection'
+import RightChevron from '../../components/svg/RightChevron'
+import Medal from '../../components/svg/Medal'
+import Shield from '../../components/svg/Shield'
+import Lightning from '../../components/svg/Lightning'
+import Fire from '../../components/svg/Fire'
+import Edit from '../../components/svg/Edit'
+import Share from '../../components/svg/Share'
+import AddFriends from '../../components/svg/addFriends'
   
 //  Dimensions de l'écran
 const screenWidth = Dimensions.get('window').width
 const screenHeight = Dimensions.get('window').height
-
-function AchievementsModaleSection(){
-    return(
-        
-        <ScrollView contentContainerStyle={styles.containerMiddle} showsVerticalScrollIndicator={false}>
-            
-            <View 
-                style={{
-                    minHeight: "100%",
-                    flexDirection: 'column',
-                    height: '100%',
-                    width: screenWidth,
-                    alignContent: "center",
-                }}
-            >
-
-                <View style={{padding:20,backgroundColor:"yellow"}}>
-
-                    <View style={{padding:20,backgroundColor:"yellow"}}>
-
-                        <View style={{padding:20,backgroundColor:"orange"}}>
-
-                            <Trophy/>
-
-                            <Text>Niveau 5</Text>
-
-                        </View>
-
-                        <View style={{padding:20,backgroundColor:"blue"}}>
-
-                            <Text>Légendaire</Text>
-
-                            <Text>Complète 50 niveaux légendaires</Text>
-
-                            <LevelProgressBar used={31} max={50}/>
-
-                        </View>
-
-                    </View>
-
-                    <View style={{padding:20,backgroundColor:"yellow"}}>
-
-                        <View style={{padding:20,backgroundColor:"orange"}}>
-
-                            <Trophy/>
-
-                            <Text>Niveau 5</Text>
-
-                        </View>
-
-                        <View style={{padding:20,backgroundColor:"blue"}}>
-
-                            <Text>Légendaire</Text>
-
-                            <Text>Complète 50 niveaux légendaires</Text>
-
-                            <LevelProgressBar used={31} max={50}/>
-
-                        </View>
-
-                    </View>
-
-                    <View style={{padding:20,backgroundColor:"yellow"}}>
-
-                        <View style={{padding:20,backgroundColor:"orange"}}>
-
-                            <Trophy/>
-
-                            <Text>Niveau 5</Text>
-
-                        </View>
-
-                        <View style={{padding:20,backgroundColor:"blue"}}>
-
-                            <Text>Légendaire</Text>
-
-                            <Text>Complète 50 niveaux légendaires</Text>
-
-                            <LevelProgressBar used={31} max={50}/>
-
-                        </View>
-
-                    </View>
-
-                    <View style={{padding:20,backgroundColor:"yellow"}}>
-
-                        <View style={{padding:20,backgroundColor:"orange"}}>
-
-                            <Trophy/>
-
-                            <Text>Niveau 5</Text>
-
-                        </View>
-
-                        <View style={{padding:20,backgroundColor:"blue"}}>
-
-                            <Text>Légendaire</Text>
-
-                            <Text>Complète 50 niveaux légendaires</Text>
-
-                            <LevelProgressBar used={31} max={50}/>
-
-                        </View>
-
-                    </View>
-
-                    <View style={{padding:20,backgroundColor:"yellow"}}>
-
-                        <View style={{padding:20,backgroundColor:"orange"}}>
-
-                            <Trophy/>
-
-                            <Text>Niveau 5</Text>
-
-                        </View>
-
-                        <View style={{padding:20,backgroundColor:"blue"}}>
-
-                            <Text>Légendaire</Text>
-
-                            <Text>Complète 50 niveaux légendaires</Text>
-
-                            <LevelProgressBar used={31} max={50}/>
-
-                        </View>
-
-                    </View>
-
-                    <View style={{padding:20,backgroundColor:"yellow"}}>
-
-                        <View style={{padding:20,backgroundColor:"orange"}}>
-
-                            <Trophy/>
-
-                            <Text>Niveau 5</Text>
-
-                        </View>
-
-                        <View style={{padding:20,backgroundColor:"blue"}}>
-
-                            <Text>Légendaire</Text>
-
-                            <Text>Complète 50 niveaux légendaires</Text>
-
-                            <LevelProgressBar used={31} max={50}/>
-
-                        </View>
-
-                    </View>
-
-                    <View style={{padding:20,backgroundColor:"yellow"}}>
-
-                        <View style={{padding:20,backgroundColor:"orange"}}>
-
-                            <Trophy/>
-
-                            <Text>Niveau 5</Text>
-
-                        </View>
-
-                        <View style={{padding:20,backgroundColor:"blue"}}>
-
-                            <Text>Légendaire</Text>
-
-                            <Text>Complète 50 niveaux légendaires</Text>
-
-                            <LevelProgressBar used={31} max={50}/>
-
-                        </View>
-
-                    </View>
-
-                    <View style={{padding:20,backgroundColor:"yellow"}}>
-
-                        <View style={{padding:20,backgroundColor:"orange"}}>
-
-                            <Trophy/>
-
-                            <Text>Niveau 5</Text>
-
-                        </View>
-
-                        <View style={{padding:20,backgroundColor:"blue"}}>
-
-                            <Text>Légendaire</Text>
-
-                            <Text>Complète 50 niveaux légendaires</Text>
-
-                            <LevelProgressBar used={31} max={50}/>
-
-                        </View>
-
-                    </View>
-
-                    <View style={{padding:20,backgroundColor:"yellow"}}>
-
-                        <View style={{padding:20,backgroundColor:"orange"}}>
-
-                            <Trophy/>
-
-                            <Text>Niveau 5</Text>
-
-                        </View>
-
-                        <View style={{padding:20,backgroundColor:"blue"}}>
-
-                            <Text>Légendaire</Text>
-
-                            <Text>Complète 50 niveaux légendaires</Text>
-
-                            <LevelProgressBar used={31} max={50}/>
-
-                        </View>
-
-                    </View>
-
-                    <View style={{padding:20,backgroundColor:"yellow"}}>
-
-                        <View style={{padding:20,backgroundColor:"orange"}}>
-
-                            <Trophy/>
-
-                            <Text>Niveau 5</Text>
-
-                        </View>
-
-                        <View style={{padding:20,backgroundColor:"blue"}}>
-
-                            <Text>Légendaire</Text>
-
-                            <Text>Complète 50 niveaux légendaires</Text>
-
-                            <LevelProgressBar used={31} max={50}/>
-
-                        </View>
-
-                    </View>
-
-                </View>
-
-            </View>
-
-        </ScrollView>
-    )
-}
 
 function ProfileScreen(){
 
@@ -276,7 +40,7 @@ function ProfileScreen(){
 
     return (
         
-        <>
+        <View style={{marginBottom:100,backgroundColor:"lightgray"}}>
 
             <View style={styles.topContainer}>
                 
@@ -306,47 +70,65 @@ function ProfileScreen(){
                     }}
                 >
                 
-                    <View style={{padding:20,backgroundColor:"blue"}}>
+                    <View style={{width:screenWidth}}>
                         
-                        <View style={{padding:20,backgroundColor:"green"}}>
+                        <View style={{flexDirection:"row",width:screenWidth}}>
 
-                            <View style={{padding:20,backgroundColor:"orange"}}>
+                            <View style={{padding:20,width:"60%",gap:8}}>
 
-                                <Text>Fanch</Text>
+                                <Text style={{fontSize:22.5,fontWeight:"bold",color:"black"}}>François</Text>
 
-                                <Text>@fanchbzh</Text>
+                                <Text style={{fontSize:15,color:"gray"}}>@fanchbzhfrancois</Text>
 
-                                <Text>Learning since June 2023</Text>
+                                <Text style={{fontSize:15,color:"black"}}>Learning since June 2023</Text>
 
-                                <View>
+                                <Text style={{fontSize:35,color:"black"}}>🏴󠁧󠁢󠁷󠁬󠁳󠁿🏴󠁧󠁢󠁳󠁣󠁴󠁿🇮🇲🇮🇪</Text>
 
-                                    <Text>7 following</Text>
+                                <View style={{gap:16,flexDirection:"row"}}>
 
-                                    <Text>9 followers</Text>
+                                    <Text style={{fontSize:15,fontWeight:"bold",color:"black"}}>7 following</Text>
+
+                                    <Text style={{fontSize:15,fontWeight:"bold",color:"black"}}>9 followers</Text>
 
                                 </View>
 
                             </View>
 
-                            <View style={{padding:20,backgroundColor:"gray"}}>
+                            <View style={{padding:20,width:"40%",justifyContent:"flex-start",alignItems:"flex-end"}}>
 
-                                <Image style={{padding:4,height:50,width:50,}} src='https://tse4.mm.bing.net/th?id=OIP.X3ajQSoHf9yNy7TQIpAmrwHaHP&pid=Api&P=0&h=180'/>
+                                <TouchableOpacity style={{padding:4,height:100,width:100,borderRadius:50,position:"relative"}}>
+
+                                    <Image style={{padding:4,height:100,width:100,borderRadius:50}} src='https://tse4.mm.bing.net/th?id=OIP.X3ajQSoHf9yNy7TQIpAmrwHaHP&pid=Api&P=0&h=180'/>
+
+                                    <View style={{position:"absolute",top:3,right:3,backgroundColor:"lightgray",padding:2,borderRadius:50}}>
+
+                                        <View style={{backgroundColor:"#381C11",padding:4,borderRadius:50}}>
+                                            
+                                            <Edit/>
+
+                                        </View>
+
+                                    </View>
+
+                                </TouchableOpacity>
 
                             </View>
 
                         </View>
                         
-                        <View style={{padding:20,backgroundColor:"yellow"}}>
+                        <View style={{padding:20,width:screenWidth,flexDirection:"row",justifyContent:"space-between",gap:16}}>
 
-                            <TouchableOpacity>
+                            <TouchableOpacity style={{padding:20,backgroundColor:"#381C11",borderRadius:20,flex:1,flexDirection:"row",justifyContent:"space-between",alignItems:"center"}}>
                                 
-                                <Text>Add Friends</Text>
+                                <Text style={{fontSize:15,fontWeight:"bold",color:"#DDDCE1",}}>Add Friends</Text>
+
+                                <AddFriends/>
                                 
                             </TouchableOpacity>
 
-                            <TouchableOpacity>
+                            <TouchableOpacity style={{padding:20,backgroundColor:"#381C11",borderRadius:100,flexDirection:"row",justifyContent:"space-between"}}>
                                 
-                                <Text>Share</Text>
+                                <Share/>
                                 
                             </TouchableOpacity>
 
@@ -354,63 +136,71 @@ function ProfileScreen(){
 
                     </View>
 
-                    <View style={{padding:20,backgroundColor:"red"}}>
+                    <View style={{padding:20,gap:20}}>
 
-                        <Text>Statistics</Text>
+                        <Text style={styles.topTitleSection}>Statistics</Text>
 
-                        <View style={{padding:20,backgroundColor:"green",gap:20}}>
+                        <View style={{gap:16,flexDirection:"column",width:"100%"}}>
+                            
+                            <View style={{gap:16,flexDirection:"row",width:"100%"}}>
 
-                            <View style={{padding:20,backgroundColor:"orange"}}>
+                                <View style={{padding:16,flexDirection:"row",alignItems:"start",gap:16,borderRadius:16,borderColor:"gray",borderWidth:4,flex:1}}>
 
-                                <Settings/>
+                                    <Fire/>
 
-                                <View style={{padding:20,backgroundColor:"red"}}>
+                                    <View style={{gap:2,width:"80%"}}>
 
-                                    <Text>2210</Text>
+                                        <Text style={{fontSize:15,fontWeight:"bold"}}>24</Text>
 
-                                    <Text>Total Exp</Text>
+                                        <Text style={{fontSize:10}}>Day streak</Text>
+
+                                    </View>
+
+                                </View>
+
+                                <View style={{padding:16,flexDirection:"row",alignItems:"start",gap:16,borderRadius:16,borderColor:"gray",borderWidth:4,flex:1}}>
+
+                                    <Lightning/>
+
+                                    <View style={{gap:2,width:"80%"}}>
+
+                                        <Text style={{fontSize:15,fontWeight:"bold"}}>20500</Text>
+
+                                        <Text style={{fontSize:10}}>Total XP</Text>
+
+                                    </View>
 
                                 </View>
 
                             </View>
+                            
+                            <View style={{gap:16,flexDirection:"row",width:"100%"}}>
 
-                            <View style={{padding:20,backgroundColor:"orange"}}>
+                                <View style={{padding:16,flexDirection:"row",alignItems:"start",gap:16,borderRadius:16,borderColor:"gray",borderWidth:4,flex:1}}>
 
-                                <Settings/>
+                                    <Shield/>
 
-                                <View style={{padding:20,backgroundColor:"red"}}>
+                                    <View style={{gap:2,width:"80%"}}>
 
-                                    <Text>2210</Text>
+                                        <Text style={{fontSize:15,fontWeight:"bold"}}>Ruby</Text>
 
-                                    <Text>Total Exp</Text>
+                                        <Text style={{fontSize:10}}>Current league</Text>
 
-                                </View>
-
-                            </View>
-
-                            <View style={{padding:20,backgroundColor:"orange"}}>
-
-                                <Settings/>
-
-                                <View style={{padding:20,backgroundColor:"red"}}>
-
-                                    <Text>2210</Text>
-
-                                    <Text>Total Exp</Text>
+                                    </View>
 
                                 </View>
 
-                            </View>
+                                <View style={{padding:16,flexDirection:"row",alignItems:"start",gap:16,borderRadius:16,borderColor:"gray",borderWidth:4,flex:1}}>
 
-                            <View style={{padding:20,backgroundColor:"orange"}}>
+                                    <Medal/>
 
-                                <Settings/>
+                                    <View style={{gap:2,width:"80%"}}>
 
-                                <View style={{padding:20,backgroundColor:"red"}}>
+                                        <Text style={{fontSize:15,fontWeight:"bold"}}>5</Text>
 
-                                    <Text>2210</Text>
+                                        <Text style={{fontSize:10}}>Golden Medals</Text>
 
-                                    <Text>Total Exp</Text>
+                                    </View>
 
                                 </View>
 
@@ -420,37 +210,15 @@ function ProfileScreen(){
 
                     </View>
 
-                    <View style={{padding:20,backgroundColor:"yellow"}}>
+                    <View style={{padding:20,gap:20,marginBottom:40,}}>
 
-                        <Text>Achievements</Text>
+                        <Text style={styles.topTitleSection}>Achievements</Text>
+                
+                        <View style={{gap:4,backgroundColor:"darkgreen",borderRadius:20,borderWidth:4,borderColor:"darkgreen"}}>
 
-                        <View style={{padding:20,backgroundColor:"white",gap:20}}>
+                            <View style={{width:screenWidth-48,backgroundColor:"green",padding:16,gap:16,flexDirection:"row",borderTopEndRadius:16,borderTopStartRadius:16}}>
 
-                            <View style={{padding:20,backgroundColor:"yellow"}}>
-
-                                <View style={{padding:20,backgroundColor:"orange"}}>
-
-                                    <Trophy/>
-
-                                    <Text>Niveau 5</Text>
-
-                                </View>
-
-                                <View style={{padding:20,backgroundColor:"blue"}}>
-
-                                    <Text>Légendaire</Text>
-
-                                    <Text>Complète 50 niveaux légendaires</Text>
-
-                                    <LevelProgressBar used={31} max={50}/>
-
-                                </View>
-
-                            </View>
-
-                            <View style={{padding:20,backgroundColor:"yellow"}}>
-
-                                <View style={{padding:20,backgroundColor:"orange"}}>
+                                <View style={{padding:8,width:"25%",backgroundColor:"orange",borderRadius:12,justifyContent:"space-between",alignItems:"center"}}>
 
                                     <Trophy/>
 
@@ -458,11 +226,11 @@ function ProfileScreen(){
 
                                 </View>
 
-                                <View style={{padding:20,backgroundColor:"blue"}}>
+                                <View style={{gap:8,paddingTop:8,width:"70%"}}>
 
-                                    <Text>Légendaire</Text>
+                                    <Text style={{fontSize:20,fontWeight:"bold",color:"#DDDCE1"}}>Légendaire</Text>
 
-                                    <Text>Complète 50 niveaux légendaires</Text>
+                                    <Text style={{fontSize:15,color:"#DDDCE1"}}>Complète 50 niveaux légendaires</Text>
 
                                     <LevelProgressBar used={31} max={50}/>
 
@@ -470,9 +238,9 @@ function ProfileScreen(){
 
                             </View>
 
-                            <View style={{padding:20,backgroundColor:"yellow"}}>
+                            <View style={{width:screenWidth-48,backgroundColor:"green",padding:16,gap:16,flexDirection:"row"}}>
 
-                                <View style={{padding:20,backgroundColor:"orange"}}>
+                                <View style={{padding:8,width:"25%",backgroundColor:"orange",borderRadius:12,justifyContent:"space-between",alignItems:"center"}}>
 
                                     <Trophy/>
 
@@ -480,11 +248,11 @@ function ProfileScreen(){
 
                                 </View>
 
-                                <View style={{padding:20,backgroundColor:"blue"}}>
+                                <View style={{gap:8,paddingTop:8,width:"70%"}}>
 
-                                    <Text>Légendaire</Text>
+                                    <Text style={{fontSize:20,fontWeight:"bold",color:"#DDDCE1"}}>Légendaire</Text>
 
-                                    <Text>Complète 50 niveaux légendaires</Text>
+                                    <Text style={{fontSize:15,color:"#DDDCE1"}}>Complète 50 niveaux légendaires</Text>
 
                                     <LevelProgressBar used={31} max={50}/>
 
@@ -492,13 +260,35 @@ function ProfileScreen(){
 
                             </View>
 
-                            <TouchableOpacity style={{padding:20,backgroundColor:"green"}}
+                            <View style={{width:screenWidth-48,backgroundColor:"green",padding:16,gap:16,flexDirection:"row"}}>
+
+                                <View style={{padding:8,width:"25%",backgroundColor:"orange",borderRadius:12,justifyContent:"space-between",alignItems:"center"}}>
+
+                                    <Trophy/>
+
+                                    <Text>Niveau 5</Text>
+
+                                </View>
+
+                                <View style={{gap:8,paddingTop:8,width:"70%"}}>
+
+                                    <Text style={{fontSize:20,fontWeight:"bold",color:"#DDDCE1"}}>Légendaire</Text>
+
+                                    <Text style={{fontSize:15,color:"#DDDCE1"}}>Complète 50 niveaux légendaires</Text>
+
+                                    <LevelProgressBar used={31} max={50}/>
+
+                                </View>
+
+                            </View>
+
+                            <TouchableOpacity style={{width:screenWidth-48,backgroundColor:"green",justifyContent:"space-between",alignItems:"center",padding:16,gap:16,flexDirection:"row",borderBottomEndRadius:16,borderBottomStartRadius:16}}
                                 onPress={()=>setOpenModale1(!openModale1)}
                             >
 
-                                <Text>View 11 more</Text>
+                                <Text style={styles.buttonTitle}>View 10 more</Text>
 
-                                <LeftArrow/>
+                                <RightChevron/>
                                 
                             </TouchableOpacity>
 
@@ -513,7 +303,7 @@ function ProfileScreen(){
             <ModaleBottomTop
                 text={"Achèvements"}
                 color={"green"}
-                child={<AchievementsModaleSection/>}
+                child={<AchievementSection/>}
                 closeFunction={setOpenModale1}
                 openValue={openModale1}
             />
@@ -526,7 +316,7 @@ function ProfileScreen(){
                 openValue={openModale2}
             />
 
-        </>
+        </View>
 
     )
 
@@ -559,6 +349,18 @@ const styles = StyleSheet.create({
 
     topTitle: {
         fontSize: 20,
+        fontWeight: "bold",
+        color: "#DDDCE1",
+    },
+
+    topTitleSection: {
+        fontSize: 20,
+        fontWeight: "bold",
+        color: "black",
+    },
+
+    buttonTitle: {
+        fontSize: 17.5,
         fontWeight: "bold",
         color: "#DDDCE1",
     },
