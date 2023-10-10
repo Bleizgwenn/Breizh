@@ -6,7 +6,7 @@ import {
     Dimensions,
     ScrollView,
 } from 'react-native'
-import LeftArrow from '../svg/LeftArrow'
+import RightChevron from '../svg/RightChevron'
 //  Dimensions de l'écran
 const screenWidth = Dimensions.get('window').width
 const screenHeight = Dimensions.get('window').height
@@ -24,144 +24,163 @@ function sectionSettings({}){
                     height: '100%',
                     width: screenWidth,
                     alignContent: "center",
+                    gap:20,
+                    padding:20,
+                    marginBottom:40,
                 }}
             >
                 
-                <View style={{padding:20,backgroundColor:"blue",gap:10}}>
+                <View style={styles.containerSection}>
 
-                    <Text>Account</Text>
+                    <Text style={styles.topTitle}>Account</Text>
+                    
+                    <View style={styles.containerSectionNav}>
 
-                    <TouchableOpacity style={{padding:20,backgroundColor:"green"}}>
+                        <TouchableOpacity style={{padding:20,backgroundColor:"blue",flexDirection:"row",justifyContent:"space-between",alignItems:"center",borderTopStartRadius:16,borderTopEndRadius:16}}>
 
-                        <Text>Preferences</Text>
+                            <Text style={styles.buttonTitle}>Preferences</Text>
 
-                        <LeftArrow/>
+                            <RightChevron/>
 
-                    </TouchableOpacity>
+                        </TouchableOpacity>
 
-                    <TouchableOpacity style={{padding:20,backgroundColor:"green"}}>
+                        <TouchableOpacity style={{padding:20,backgroundColor:"blue",flexDirection:"row",justifyContent:"space-between",alignItems:"center"}}>
 
-                        <Text>Preferences</Text>
+                            <Text style={styles.buttonTitle}>Preferences</Text>
 
-                        <LeftArrow/>
+                            <RightChevron/>
 
-                    </TouchableOpacity>
+                        </TouchableOpacity>
 
-                    <TouchableOpacity style={{padding:20,backgroundColor:"green"}}>
+                        <TouchableOpacity style={{padding:20,backgroundColor:"blue",flexDirection:"row",justifyContent:"space-between",alignItems:"center"}}>
 
-                        <Text>Preferences</Text>
+                            <Text style={styles.buttonTitle}>Preferences</Text>
 
-                        <LeftArrow/>
+                            <RightChevron/>
 
-                    </TouchableOpacity>
+                        </TouchableOpacity>
 
-                    <TouchableOpacity style={{padding:20,backgroundColor:"green"}}>
+                        <TouchableOpacity style={{padding:20,backgroundColor:"blue",flexDirection:"row",justifyContent:"space-between",alignItems:"center"}}>
 
-                        <Text>Preferences</Text>
+                            <Text style={styles.buttonTitle}>Preferences</Text>
 
-                        <LeftArrow/>
+                            <RightChevron/>
 
-                    </TouchableOpacity>
+                        </TouchableOpacity>
 
-                    <TouchableOpacity style={{padding:20,backgroundColor:"green"}}>
+                        <TouchableOpacity style={{padding:20,backgroundColor:"blue",flexDirection:"row",justifyContent:"space-between",alignItems:"center"}}>
 
-                        <Text>Preferences</Text>
+                            <Text style={styles.buttonTitle}>Preferences</Text>
 
-                        <LeftArrow/>
+                            <RightChevron/>
 
-                    </TouchableOpacity>
+                        </TouchableOpacity>
 
-                    <TouchableOpacity style={{padding:20,backgroundColor:"green"}}>
+                        <TouchableOpacity style={{padding:20,backgroundColor:"blue",flexDirection:"row",justifyContent:"space-between",alignItems:"center"}}>
 
-                        <Text>Preferences</Text>
+                            <Text style={styles.buttonTitle}>Preferences</Text>
 
-                        <LeftArrow/>
+                            <RightChevron/>
 
-                    </TouchableOpacity>
+                        </TouchableOpacity>
 
-                    <TouchableOpacity style={{padding:20,backgroundColor:"green"}}>
+                        <TouchableOpacity style={{padding:20,backgroundColor:"blue",flexDirection:"row",justifyContent:"space-between",alignItems:"center"}}>
 
-                        <Text>Preferences</Text>
+                            <Text style={styles.buttonTitle}>Preferences</Text>
 
-                        <LeftArrow/>
+                            <RightChevron/>
 
-                    </TouchableOpacity>
+                        </TouchableOpacity>
 
-                    <TouchableOpacity style={{padding:20,backgroundColor:"green"}}>
+                        <TouchableOpacity style={{padding:20,backgroundColor:"blue",flexDirection:"row",justifyContent:"space-between",alignItems:"center",borderBottomStartRadius:16,borderBottomEndRadius:16}}>
 
-                        <Text>Preferences</Text>
+                            <Text style={styles.buttonTitle}>Preferences</Text>
 
-                        <LeftArrow/>
+                            <RightChevron/>
 
-                    </TouchableOpacity>
+                        </TouchableOpacity>
 
-                </View>
-                
-                <View style={{padding:20,backgroundColor:"blue",gap:10}}>
-
-                    <Text>Subscription</Text>
-
-                    <TouchableOpacity style={{padding:20,backgroundColor:"green"}}>
-
-                        <Text>Manage Subscription</Text>
-
-                        <Text>Super Duoligo 12 months</Text>
-
-                        <LeftArrow/>
-
-                    </TouchableOpacity>
-
-                    <TouchableOpacity style={{padding:20,backgroundColor:"green"}}>
-
-                        <Text>Restore Subscription</Text>
-
-                    </TouchableOpacity>
+                    </View>
 
                 </View>
                 
-                <View style={{padding:20,backgroundColor:"blue",gap:10}}>
+                <View style={styles.containerSection}>
 
-                    <Text>Support</Text>
+                    <Text style={styles.topTitle}>Subscription</Text>
 
-                    <TouchableOpacity style={{padding:20,backgroundColor:"green"}}>
+                    <View style={styles.containerSectionNav}>
 
-                        <Text>Help center</Text>
+                        <TouchableOpacity style={{padding:20,backgroundColor:"blue",flexDirection:"row",justifyContent:"space-between",alignItems:"center",borderTopStartRadius:16,borderTopEndRadius:16}}>
+                            
+                            <View style={{gap:10}}>
 
-                        <LeftArrow/>
+                                <Text style={styles.buttonTitle}>Manage Subscription</Text>
 
-                    </TouchableOpacity>
+                                <Text style={{fontSize:15,fontWeight:"bold",color:"#DDDCE1",}}>Super Duoligo 12 months</Text>
 
-                    <TouchableOpacity style={{padding:20,backgroundColor:"green"}}>
+                            </View>
 
-                        <Text>Feedback</Text>
+                            <RightChevron/>
 
-                        <LeftArrow/>
+                        </TouchableOpacity>
 
-                    </TouchableOpacity>
+                        <TouchableOpacity style={{padding:20,backgroundColor:"blue",flexDirection:"row",justifyContent:"space-between",alignItems:"center",borderBottomStartRadius:16,borderBottomEndRadius:16}}>
+
+                            <Text style={styles.buttonTitle}>Restore Subscription</Text>
+
+                        </TouchableOpacity>
+
+                    </View>
+
+                </View>
+                
+                <View style={styles.containerSection}>
+
+                    <Text style={styles.topTitle}>Support</Text>
+                    
+                    <View style={styles.containerSectionNav}>
+
+                        <TouchableOpacity style={{padding:20,backgroundColor:"blue",flexDirection:"row",justifyContent:"space-between",alignItems:"center",borderTopStartRadius:16,borderTopEndRadius:16}}>
+
+                            <Text style={styles.buttonTitle}>Help center</Text>
+
+                            <RightChevron/>
+
+                        </TouchableOpacity>
+
+                        <TouchableOpacity style={{padding:20,backgroundColor:"blue",flexDirection:"row",justifyContent:"space-between",alignItems:"center",borderBottomStartRadius:16,borderBottomEndRadius:16}}>
+
+                            <Text style={styles.buttonTitle}>Feedback</Text>
+
+                            <RightChevron/>
+
+                        </TouchableOpacity>
+
+                    </View>
 
                 </View>
 
-                <TouchableOpacity style={{padding:20,backgroundColor:"green"}}>
+                <TouchableOpacity style={{backgroundColor:"blue",borderRadius: 20,borderColor: "darkblue",padding:20,borderWidth:4}}>
 
-                    <Text>Sign out</Text>
-
-                </TouchableOpacity>
-
-                <TouchableOpacity>
-
-                    <Text>Terms</Text>
+                    <Text style={styles.buttonTitle}>Sign out</Text>
 
                 </TouchableOpacity>
 
                 <TouchableOpacity>
 
-                    <Text>Privacy policy</Text>
+                    <Text style={styles.topTitle}>Terms</Text>
 
                 </TouchableOpacity>
 
                 <TouchableOpacity>
 
-                    <Text>Acknowledgements</Text>
+                    <Text style={styles.topTitle}>Privacy policy</Text>
+
+                </TouchableOpacity>
+
+                <TouchableOpacity>
+
+                    <Text style={styles.topTitle}>Acknowledgements</Text>
 
                 </TouchableOpacity>
 
@@ -177,8 +196,32 @@ const styles = StyleSheet.create({
 
     containerMiddle: {
         width: screenWidth,
-        backgroundColor: "lightgray",
+        backgroundColor: "blue",
         position: "relative",
+    },
+
+    topTitle: {
+        fontSize: 20,
+        fontWeight: "bold",
+        color: "#DDDCE1",
+    },
+
+    containerSection: {
+        gap:20,
+    },
+
+    containerSectionNav: {
+        gap:4,
+        backgroundColor: "darkblue",
+        borderRadius: 20,
+        borderColor: "darkblue",
+        borderWidth:4
+    },
+
+    buttonTitle: {
+        fontSize: 17.5,
+        fontWeight: "bold",
+        color: "#DDDCE1",
     },
 
 })
