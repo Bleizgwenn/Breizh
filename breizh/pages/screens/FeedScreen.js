@@ -20,7 +20,7 @@ function FeedScreen(){
 
     return (
         
-        <>
+        <View style={{marginBottom:100,backgroundColor:"lightgray"}}>
 
             <View style={styles.topContainer}>
                 
@@ -41,6 +41,9 @@ function FeedScreen(){
                         height: '100%',
                         width: screenWidth,
                         alignContent: "center",
+                        padding:20,
+                        gap:20,
+                        marginBottom:40,
                     }}
                 >
                     
@@ -54,7 +57,7 @@ function FeedScreen(){
 
             </ScrollView>
 
-        </>
+        </View>
 
     )
 
