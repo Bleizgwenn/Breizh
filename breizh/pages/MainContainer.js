@@ -10,6 +10,7 @@ import FeedScreen from './screens/FeedScreen'
 import LeagueScreen from './screens/LeagueScreen'
 import ProfileScreen from './screens/ProfileScreen'
 import DailyMission from './screens/DailyMission'
+import ConnectedScreen from './screens/ConnectedScreen'
 
 import {Dimensions} from 'react-native'
   
@@ -19,6 +20,7 @@ const screenHeight = Dimensions.get('window').height
 
 //  Screen Names
 
+const ConnectedScreenName = "ConnectedScreen"
 const HomeScreenName = "HomeScreen"
 const FeedScreenName = "FeedScreen"
 const LeagueScreenName = "LeagueScreen"
@@ -36,7 +38,7 @@ class MainContainer extends React.Component {
             <NavigationContainer independent={true}>
 
                 <Tab.Navigator
-                    initialRouteName={HomeScreenName}
+                    initialRouteName={ConnectedScreenName}
                     screenOptions={({ route }) => ({
                         tabBarIcon: ({ focused, color, size }) => {
                             let iconName
@@ -62,6 +64,8 @@ class MainContainer extends React.Component {
                         },
                     })}
                 >
+
+                    <Tab.Screen name={ConnectedScreenName} component={ConnectedScreen} options={{ headerShown: false }}/>
 
                     <Tab.Screen name={HomeScreenName} component={HomeScreen} options={{ headerShown: false }}/>
 
