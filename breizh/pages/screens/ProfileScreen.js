@@ -76,13 +76,15 @@ function ProfileScreen(){
 
                             <View style={{padding:20,width:"60%",gap:8}}>
 
-                                <Text style={{fontSize:22.5,fontWeight:"bold",color:"black"}}>François</Text>
+                                <Text style={{fontSize:22.5,fontWeight:"bold",color:"black"}}>Ulric</Text>
 
-                                <Text style={{fontSize:15,color:"gray"}}>@fanchbzhfrancois</Text>
+                                <Text style={{fontSize:15,color:"gray"}}>@ulricbzh</Text>
 
                                 <Text style={{fontSize:15,color:"black"}}>Learning since June 2023</Text>
 
                                 <Text style={{fontSize:35,color:"black"}}>🏴󠁧󠁢󠁷󠁬󠁳󠁿🏴󠁧󠁢󠁳󠁣󠁴󠁿🇮🇲🇮🇪</Text>
+                                
+                                {/* <Image style={{height:25,width:35}} source={require('../../assets/img/Gad.png')}/> */}
 
                                 <View style={{gap:16,flexDirection:"row"}}>
 
@@ -98,7 +100,9 @@ function ProfileScreen(){
 
                                 <TouchableOpacity style={{padding:4,height:100,width:100,borderRadius:50,position:"relative"}}>
 
-                                    <Image style={{padding:4,height:100,width:100,borderRadius:50}} src='https://tse4.mm.bing.net/th?id=OIP.X3ajQSoHf9yNy7TQIpAmrwHaHP&pid=Api&P=0&h=180'/>
+                                    <Image style={{padding:4,height:100,width:100,borderRadius:50}} src='https://www.bretagne-actuelle.com/wp-content/uploads/2018/07/Phares-bretons.jpg'/>
+
+                                    {/* <Image style={{padding:4,height:100,width:100,borderRadius:50}} src='https://tse4.mm.bing.net/th?id=OIP.X3ajQSoHf9yNy7TQIpAmrwHaHP&pid=Api&P=0&h=180'/> */}
 
                                     <View style={{position:"absolute",top:3,right:3,backgroundColor:"lightgray",padding:2,borderRadius:50}}>
 
